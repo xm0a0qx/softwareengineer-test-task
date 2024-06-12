@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.klausapp.scorecalculator.grpc";
+option java_outer_classname = "ScoreChangeProto";
+
+service ScoreChangeService {
+  rpc getScore(ScoreChangeRequest) returns (ScoreChangeResponse);
+}
+
+message ScoreChangeRequest {
+  string firstPeriodStart = 1;
+  string firstPeriodEnd = 2;
+  string secondPeriodStart = 3;
+  string secondPeriodEnd = 4;
+}
+
+message ScoreChangeResponse {
+  float scorePercentage = 1;
+}

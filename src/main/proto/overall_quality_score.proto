@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.klausapp.scorecalculator.grpc";
+option java_outer_classname = "OverallScoreProto";
+
+service OverallQualityScoreService {
+  rpc getScore(OverallQualityScoreRequest) returns (OverallQualityScoreResponse);
+}
+
+message OverallQualityScoreRequest {
+  string periodStart = 1;
+  string periodEnd = 2;
+}
+
+message OverallQualityScoreResponse {
+  float scorePercentage = 1;
+}

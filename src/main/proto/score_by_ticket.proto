@@ -1,0 +1,24 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "com.klausapp.scorecalculator.grpc";
+option java_outer_classname = "TicketsScoreServiceProto";
+
+service TicketsScoreService {
+  rpc getScores(TicketScoreRequest) returns (TicketScoreResponse);
+}
+
+message TicketScoreRequest {
+  string periodStart = 1;
+  string periodEnd = 2;
+}
+
+message TicketScoreResponse {
+    message CategoryScoreList {
+      message CategoryScore {
+        string categoryName = 1;
+        float score = 2;
+      }
+      repeated CategoryScore categoryScore = 1;
+    }
+    map<int32, CategoryScoreList> categoryScoresByTickets = 1;
+}
