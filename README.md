@@ -6,49 +6,51 @@
 **How to run**
 
 docker way
-
+```bash
 docker build -t sample .
 
 docker run -p 8080:8080 -p 9090:9090 sample
-
+```
 maven way
-
+```bash
 mvn spring-boot:run
+```
 
 **Testing**
 
 Application cab be tested using Postman or grpcurl to create gRPC calls to server.
 
-localhost:9090 AggregatedCategoryScoresService.getScores
 
+localhost:9090 AggregatedCategoryScoresService.getScores
+```json
 {
     "periodEnd": "2019-07-30T17:43:14",
     "periodStart": "2019-07-25T17:43:14"
 }
-
+```
 localhost:9090 ScoreChangeService.getScore
-
+```json
 {
     "firstPeriodEnd": "2019-07-26T17:43:14",
     "firstPeriodStart": "2019-07-25T17:43:14",
     "secondPeriodEnd": "2019-07-29T17:43:14",
     "secondPeriodStart": "2019-07-27T17:43:14"
 }
-
+```
 localhost:9090 OverallQualityScoreService.getScore
-
+```json
 {
     "periodEnd": "2019-07-30T17:43:14",
     "periodStart": "2019-07-25T17:43:14"
 }
-
+```
 localhost:9090 TicketsScoreService.getScore
-
+```json
 {
     "periodEnd": "2019-07-30T17:43:14",
     "periodStart": "2019-07-25T17:43:14"
 }
-
+```
 
 
 
