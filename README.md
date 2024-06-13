@@ -16,7 +16,7 @@ maven way
 mvn spring-boot:run
 ```
 
-Docker container can be then deployed to k8s or minicube (in case if it local testing)
+Docker container can be deployed to k8s or minicube (in case if it local testing)
 
 **Testing**
 
