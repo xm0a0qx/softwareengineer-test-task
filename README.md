@@ -16,6 +16,8 @@ maven way
 mvn spring-boot:run
 ```
 
+Docker container can be then deployed to k8s or minicube (in case if it local testing)
+
 **Testing**
 
 Application cab be tested using Postman or grpcurl to create gRPC calls to server.
