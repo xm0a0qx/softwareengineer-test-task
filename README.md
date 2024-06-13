@@ -1,3 +1,59 @@
+**Project requirements:**
+
+* Java 17
+* Maven
+
+**How to run**
+
+docker way
+
+docker build -t sample .
+
+docker run -p 8080:8080 -p 9090:9090 sample
+
+maven way
+
+mvn spring-boot:run
+
+**Testing**
+
+Application cab be tested using Postman or grpcurl to create gRPC calls to server.
+
+localhost:9090 AggregatedCategoryScoresService.getScores
+
+{
+    "periodEnd": "2019-07-30T17:43:14",
+    "periodStart": "2019-07-25T17:43:14"
+}
+
+localhost:9090 ScoreChangeService.getScore
+
+{
+    "firstPeriodEnd": "2019-07-26T17:43:14",
+    "firstPeriodStart": "2019-07-25T17:43:14",
+    "secondPeriodEnd": "2019-07-29T17:43:14",
+    "secondPeriodStart": "2019-07-27T17:43:14"
+}
+
+localhost:9090 OverallQualityScoreService.getScore
+
+{
+    "periodEnd": "2019-07-30T17:43:14",
+    "periodStart": "2019-07-25T17:43:14"
+}
+
+localhost:9090 TicketsScoreService.getScore
+
+{
+    "periodEnd": "2019-07-30T17:43:14",
+    "periodStart": "2019-07-25T17:43:14"
+}
+
+
+
+
+
+
 # Software Engineer Test Task
 
 As a test task for [Klaus](https://www.klausapp.com) software engineering position we ask our candidates to build a small [gRPC](https://grpc.io) service using language of their choice. Preferred language for new services in Klaus is [Go](https://golang.org).
